@@ -32,10 +32,11 @@ var layerControl = L.control.groupedLayers("", groupedOverlays, options).addTo(m
 
 var inputStateClassLayer;
 var inputStratumLayer;
+var base_url = 'http://127.0.0.1:8000'; // TODO - remove this
 function loadLayers(scenario_input_services){
 
-    inputStateClassLayer = L.tileLayer(scenario_input_services.stateclass);
-    inputStratumLayer = L.tileLayer(scenario_input_services.stratum);
+    inputStateClassLayer = L.tileLayer(base_url + scenario_input_services.stateclass);
+    inputStratumLayer = L.tileLayer(base_url + scenario_input_services.stratum);
 
     layerControl.addOverlay(inputStateClassLayer, "State Classes", "Initial Conditions");
     layerControl.addOverlay(inputStratumLayer, "Vegetation Types", "Initial Conditions");

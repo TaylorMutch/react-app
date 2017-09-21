@@ -217,88 +217,103 @@
     <div id="map"></div>
 
     <div id="right">
-
-            <div id="legend_container" class="widget_div">
-                <div id="legend_header" class="full_border_radius header right_header">Legend<img class="collapse_icon" src="%PUBLIC_URL%/img/collapse_down_arrow.png"></div>
-                <div class="collapsible_div collapsed">
-                    <div id="scene_legend"></div>
-                </div>
-            </div>
-
-            <div id="output">
-                <div id="model_results_header" class="right_header">Model Results<img class="collapse_icon rotate90" src="%PUBLIC_URL%/img/collapse_down_arrow.png"></div>
-                     <div id="tab_container" class="collapsible_div">
-                        <!--data-persist="true" keeps the current tab active on page refresh-->
-                        <ul class="tabs" data-persist="false">
-                            <li id="view1_tab" style="display:none"><a onclick="changeOutputStateClass(1)" id="view1_link" href="#view1">Run 1</a></li>
-                            <li id="view2_tab" style="display:none"><a onclick="changeOutputStateClass(2)" id="view2_link" href="#view2">Run 2</a></li>
-                            <li id="view3_tab" style="display:none"><a onclick="changeOutputStateClass(3)" id="view3_link" href="#view3">Run 3</a></li>
-                            <li id="view4_tab" style="display:none"><a onclick="changeOutputStateClass(4)" id="view4_link" href="#view4">Run 4</a></li>
-                        </ul>
-                        <div class="tabcontents">
-                            <div id="view1" class="views">
-                                <div id="tabular_output_1">
-                                    <table id="results_table_1" class="results_table"></table>
-                                </div>
-                            </div>
-                            <div id="view2" class="views">
-                                <div id="tabular_output_2">
-                                    <table id="results_table_2" class="results_table"></table>
-                                </div>
-                            </div>
-                            <div id="view3" class="views">
-                                <div id="tabular_output_3">
-                                    <table id="results_table_3" class="results_table"></table>
-                                </div>
-                            </div>
-                            <div id="view4" class="views">
-                                <div id="tabular_output_4">
-                                    <table id="results_table_4" class="results_table"></table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div id="legend_container" class="widget_div">
+        <div id="legend_header" class="full_border_radius header right_header">
+          Legend
+          <img class="collapse_icon" src="%PUBLIC_URL%/img/collapse_down_arrow.png">
         </div>
-
-        <div id="footer">
-            <img id="footerImage" src="%PUBLIC_URL%/img/CBI_logo_sm.png">
-            <div id="footerText">
-                © 2017
-                <a href="https://consbio.org" target="_new">Conservation Biology Institute</a> |
-                <a href="mailto:info@consbio.org">info@consbio.org</a>
-            </div>
+        <div class="collapsible_div collapsed">
+          <div id="scene_legend"></div>
         </div>
+      </div>
+      <div id="output">
+        <div id="model_results_header" class="right_header">
+          Model Results
+          <img class="collapse_icon rotate90" src="%PUBLIC_URL%/img/collapse_down_arrow.png">
+        </div>
+        <div id="tab_container" class="collapsible_div">
+          <!--data-persist="true" keeps the current tab active on page refresh-->
+          <ul class="tabs" data-persist="false">
+            <li id="view1_tab" style="display:none">
+              <a onclick="changeOutputStateClass(1)" id="view1_link" href="#view1">
+                Run 1
+              </a>
+            </li>
+            <li id="view2_tab" style="display:none">
+              <a onclick="changeOutputStateClass(2)" id="view2_link" href="#view2">
+                Run 2
+              </a>
+            </li>
+            <li id="view3_tab" style="display:none">
+              <a onclick="changeOutputStateClass(3)" id="view3_link" href="#view3">
+                Run 3
+              </a>
+            </li>
+            <li id="view4_tab" style="display:none">
+              <a onclick="changeOutputStateClass(4)" id="view4_link" href="#view4">
+                Run 4
+              </a>
+            </li>
+          </ul>
+          <div class="tabcontents">
+            <div id="view1" class="views">
+              <div id="tabular_output_1">
+                <table id="results_table_1" class="results_table"></table>
+              </div>
+            </div>
+            <div id="view2" class="views">
+              <div id="tabular_output_2">
+                <table id="results_table_2" class="results_table"></table>
+              </div>
+            </div>
+            <div id="view3" class="views">
+              <div id="tabular_output_3">
+                <table id="results_table_3" class="results_table"></table>
+              </div>
+            </div>
+            <div id="view4" class="views">
+              <div id="tabular_output_4">
+                <table id="results_table_4" class="results_table"></table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-        <!-- Leaflet Map -->
-        <script src="%PUBLIC_URL%/leaflet/leaflet_map.js" type="text/javascript"></script>
+    <div id="footer">
+      <img id="footerImage" src="%PUBLIC_URL%/img/CBI_logo_sm.png">
+      <div id="footerText">
+        © 2017
+        <a href="https://consbio.org" target="_new">Conservation Biology Institute</a> |
+        <a href="mailto:info@consbio.org">info@consbio.org</a>
+      </div>
+    </div>
 
-        <!-- Stacked Area Chart -->
-        <script src="%PUBLIC_URL%/highcharts/stacked_area.js"></script>
+    <!-- Leaflet Map -->
+    <script src="%PUBLIC_URL%/leaflet/leaflet_map.js" type="text/javascript"></script>
 
-        <!-- Column Chart -->
-        <script src="%PUBLIC_URL%/highcharts/column_chart.js"></script>
+    <!-- Stacked Area Chart -->
+    <script src="%PUBLIC_URL%/highcharts/stacked_area.js"></script>
 
-        <!-- Library Configuration -->
-        <script src="%PUBLIC_URL%/config/library_config.js"></script>
+    <!-- Column Chart -->
+    <script src="%PUBLIC_URL%/highcharts/column_chart.js"></script>
 
-        <!-- Shapefile Uploader -->
-        <script src="%PUBLIC_URL%/deps/L.Control.Shapefile/L.Control.Shapefile.js"></script>
-        <link rel="stylesheet"  href="%PUBLIC_URL%/deps/L.Control.Shapefile/L.Control.Shapefile.css">
+    <!-- Library Configuration -->
+    <script src="%PUBLIC_URL%/config/library_config.js"></script>
 
-        <!-- My leaflet button control -->
-        <script src="%PUBLIC_URL%/deps/L.Control.Button/L.Control.Button.js"></script>
-        <link rel="stylesheet" href="%PUBLIC_URL%/deps/L.Control.Button/L.Control.Button.css"/>
+    <!-- Shapefile Uploader -->
+    <script src="%PUBLIC_URL%/deps/L.Control.Shapefile/L.Control.Shapefile.js"></script>
+    <link rel="stylesheet"  href="%PUBLIC_URL%/deps/L.Control.Shapefile/L.Control.Shapefile.css">
 
-        <!-- Management Action Scripts -->
-        <script src="%PUBLIC_URL%/js/cost.js"></script>
-        <script src="%PUBLIC_URL%/js/manage.js"></script>
-        <link rel="stylesheet"  href="%PUBLIC_URL%/css/cost.css">
-        <link rel="stylesheet"  href="%PUBLIC_URL%/css/manage.css">
+    <!-- My leaflet button control -->
+    <script src="%PUBLIC_URL%/deps/L.Control.Button/L.Control.Button.js"></script>
+    <link rel="stylesheet" href="%PUBLIC_URL%/deps/L.Control.Button/L.Control.Button.css"/>
 
-
-
-
-</body>
+    <!-- Management Action Scripts -->
+    <script src="%PUBLIC_URL%/js/cost.js"></script>
+    <script src="%PUBLIC_URL%/js/manage.js"></script>
+    <link rel="stylesheet"  href="%PUBLIC_URL%/css/cost.css">
+    <link rel="stylesheet"  href="%PUBLIC_URL%/css/manage.css">
+  </body>
 </html>
