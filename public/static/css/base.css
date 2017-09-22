@@ -120,9 +120,9 @@ canvas {
 	margin:15px;
 }
 
-.library_info_hidden{
+/*.library_info_hidden{
 	display:none;
-}
+}*/
 
 #library_info_table{
 	width:100%;
@@ -147,7 +147,7 @@ canvas {
 }
 
 #start_button {
-	display:none;
+	/*display:none;*/
 	margin: 20px 0px;
 	float: right;
 	border: 0px;
@@ -158,19 +158,6 @@ canvas {
 
 #inputs{
 	display:none;
-}
-
-#model_selection_container{
-	width:100%;
-	text-align:center;
-}
-#model_selection1{
-	margin-right:auto;
-	margin-right:auto;
-	width:100%;
-}
-#model_selection2{
-	width:100%;
 }
 
 #button_container {

@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import LeftSidebar from '../components/LeftSidebar';
+import LeftSidebar from '../containers/LeftSidebar';
 import RightSidebar from '../components/RightSidebar';
 
 class App extends React.Component {

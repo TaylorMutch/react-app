@@ -185,12 +185,6 @@ $(document).ready(function() {
 
     /***************************************** Change Library *********************************************************/
 
-    $(".model_selection").on("change", function() {
-        $("#model_selection_td").removeClass("initial_td_styling");
-        showLibraryInfo();
-        $(".library_info_hidden").show();
-        $("#start_button").show();
-    });
 
     // Also called on page load.
     function showLibraryInfo() {
@@ -214,11 +208,6 @@ $(document).ready(function() {
         // Show the layer
         bounding_box_layer = L.geoJSON(bounding_box).addTo(map);
         bounding_box_layer.bindPopup(library_info.name + " Extent").openPopup();
-
-        // Upate the values in the library_info table
-        $("#library_author").html(library_info.author);
-        $("#library_date").html(library_info.date);
-        $("#library_description").html(library_info.description);
 
     };
 

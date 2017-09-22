@@ -4,7 +4,7 @@ import {
 import { morph } from '../utils';
 
 const defaultState = {
-    currentLibraryName: '',
+    name: '',
     availableLibraries: [],
     isFetching: false
 }
@@ -16,8 +16,7 @@ export default (state = defaultState, action) => {
         case RECEIVE_AVAILABLE_LIBRARIES:
             return morph(state, {isFetching: false, availableLibraries: action.libraries});
         case SET_LIBRARY:
-            console.log(action);
-            return morph(state, {currentLibraryName: action.name});
+            return morph(state, {name: action.name});
         case LOAD_LIBRARY:
             // TODO - move loading the library to this event, or something that is fired to load it
             return state;

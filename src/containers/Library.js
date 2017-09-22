@@ -1,13 +1,14 @@
 import Library from '../components/Library';
 import { connect } from 'react-redux';
-import { setLibrary, loadLibrary, fetchAvailableLibraries } from '../actions/library';
+import { setLibrary, fetchAvailableLibraries } from '../actions/library';
+import { fetchScenarios } from '../actions/scenario';
 
 const mapStateToProps = ({library}) => {
 
-    let { currentLibraryName, availableLibraries } = library;
+    let { name, availableLibraries } = library;
 
     return {
-        name: currentLibraryName,
+        name,
         libraries: availableLibraries
     }
 }
@@ -23,7 +24,7 @@ const mapDispatchToProps = dispatch => {
         },
 
         onLoadLibrary: name => {
-            dispatch(loadLibrary());
+            dispatch(fetchScenarios());
         }
     }
 }

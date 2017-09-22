@@ -1,10 +1,8 @@
-import { get, post } from '../io'
+import { get } from '../io'
 
 export const REQUEST_AVAILABLE_LIBRARIES = 'REQUEST_AVAILABLE_LIBRARIES'
 export const RECEIVE_AVAILABLE_LIBRARIES = 'RECEIVE_AVAILABLE_LIBRARIES'
 export const SET_LIBRARY = 'SET_LIBRARY'
-export const LOAD_LIBRARY = 'LOAD_LIBRARY'
-export const RESET_LIBRARY = 'RESET_LIBRARY'
 
 export const requestAvailableLibraries = () => {
     return {
@@ -42,20 +40,11 @@ export const fetchAvailableLibraries = () => {
 }
 
 export const setLibrary = (name) => {
+
+    // Do we need to send some map events?
+
     return {
         type: SET_LIBRARY,
         name
-    }
-}
-
-export const loadLibrary = () => {
-    return {
-        type: LOAD_LIBRARY
-    }
-}
-
-export const resetLibrary = () => {
-    return {
-        type: RESET_LIBRARY
     }
 }

@@ -10,14 +10,26 @@ class LeftSidebar extends React.Component {
 
     render() {
 
+        let { scenario } = this.props;
+
+        let optional = () => {
+            if (scenario) {
+                return (
+                    <div>
+                        <VegCover/>
+                        <ProbabilisticTransition/>
+                        <RunControl/>
+                        <RunButton/>
+                    </div>
+                )
+            }
+        }
+
         return (
             <div id='left'>
                 <Welcome/>
                 <Library/>
-                <VegCover/>
-                <ProbabilisticTransition/>
-                <RunControl/>
-                <RunButton/>
+                {optional()}
             </div>
         )
     }
