@@ -19,23 +19,23 @@ $(document).ready(function() {
 
     // Top-level endpoint, get list of available libraries
     // TODO - remove this and replace with just '/api/libraries/'
-    $.getJSON('http://127.0.0.1:8000/api/libraries/').done(function (res) {
-
-        available_libraries = res.results;
-
-        // Add each library to the library selection dropdown.
-        $.each(available_libraries, function(index,library_array){
-            $(".model_selection").append("<option value ='" + library_array.id + "'>" + library_array.name)
-        });
-
-        $("select").prop("selectedIndex",0);
-        // Option to select the first library
-        // $("select").prop("selectedIndex",1);
-        // showLibraryInfo()
-
-        $("#spatial_switch")[0].checked = true
-
-    });
+    //$.getJSON('http://127.0.0.1:8000/api/libraries/').done(function (res) {
+//
+    //    available_libraries = res.results;
+//
+    //    // Add each library to the library selection dropdown.
+    //    $.each(available_libraries, function(index,library_array){
+    //        $(".model_selection").append("<option value ='" + library_array.id + "'>" + library_array.name)
+    //    });
+//
+    //    $("select").prop("selectedIndex",0);
+    //    // Option to select the first library
+    //    // $("select").prop("selectedIndex",1);
+    //    // showLibraryInfo()
+//
+    //    $("#spatial_switch")[0].checked = true
+//
+    //});
 
     /************************************************* Run Model  ****************************************************/
     run=0;

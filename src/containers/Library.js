@@ -1,15 +1,23 @@
 import Library from '../components/Library';
 import { connect } from 'react-redux';
-import { setLibrary, loadLibrary } from '../actions/library';
+import { setLibrary, loadLibrary, fetchAvailableLibraries } from '../actions/library';
 
-const mapStateToProps = ({libraryName}) => {
+const mapStateToProps = ({library}) => {
+
+    let { currentLibraryName, availableLibraries } = library;
+
     return {
-        name: libraryName
+        name: currentLibraryName,
+        libraries: availableLibraries
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
+        onLoad: () => {
+            dispatch(fetchAvailableLibraries());
+        },
+        
         onSetLibrary: name => {
             dispatch(setLibrary(name));
         },

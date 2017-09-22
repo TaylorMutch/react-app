@@ -1,14 +1,8 @@
 import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import Welcome from '../components/Welcome';
-import Library from '../containers/Library';
-import VegCover from '../components/VegCover';
-import ProbabilisticTransition from '../components/ProbabilisticTransition';
-import RunControl from '../components/RunControl';
-import RunButton from '../components/RunButton';
-import Legend from '../components/Legend';
-import Results from '../components/Results';
+import LeftSidebar from '../components/LeftSidebar';
+import RightSidebar from '../components/RightSidebar';
 
 class App extends React.Component {
     render() {
@@ -19,24 +13,8 @@ class App extends React.Component {
     return (
         <div>
             <Header/>  
-                <div id='left'>
-                    <Welcome/>
-                    <Library/>
-                    <VegCover/>
-                    <ProbabilisticTransition/>
-                    <RunControl/>
-                    <RunButton/>
-                </div>
-                <div id='right'>
-                    <Legend/>
-                    <div id='output'>
-                        <div id="model_results_header" className="right_header">
-                            Model Results
-                            <img className="collapse_icon rotate90" src="static/img/collapse_down_arrow.png" alt=''/>
-                        </div>
-                        <Results/>
-                    </div>
-                </div>
+            <LeftSidebar/>
+            <RightSidebar/>
             <Footer/>
             </div>
         )
