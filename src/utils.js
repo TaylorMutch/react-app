@@ -2,23 +2,6 @@
 /* A shortcut for Object.assign({}, obj, props) */
 export const morph = (obj, props = {}) => Object.assign({}, obj, props)
 
-export const getServiceName = (variable, objective, climate, region) => {
-    let serviceName = region + '_'
-
-    // Show site climate when looking for seedlots, and seedlot climate when looking for sites
-    let selectedClimate = objective === 'seedlots' ? climate.site : climate.seedlot
-    let { time, model } = selectedClimate
-
-    if (time === '1961_1990' || time === '1981_2010') {
-        serviceName += time
-    }
-    else {
-        serviceName += model + '_' + time
-    }
-
-    return serviceName + 'Y_' + variable
-}
-
 export const getCookies = () => {
     let cookies = {}
 
@@ -28,4 +11,14 @@ export const getCookies = () => {
     })
 
     return cookies
+}
+
+/* Shortcut for handling a JSON request. */
+export const handleJSON = response => {
+    let {status} = response;
+    if (status >= 200 && status < 300) {
+        return response.json();
+    } else {
+        throw new Error('Bad status: ' + response.status);
+    }
 }

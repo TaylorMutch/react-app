@@ -32,8 +32,6 @@ class Library extends React.Component {
 			currentConfig = {'author': '', 'data': '', 'description': ''};	// TODO - better way than setting a bunch of empty strings?
 		}
 
-		
-
 		return (
 			<InputWidget name='ST-Sim Library'>
 				<div id="library_info">
