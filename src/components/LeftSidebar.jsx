@@ -12,7 +12,7 @@ class LeftSidebar extends React.Component {
 
         let { scenario } = this.props;
 
-        let optional = () => {
+        let scenarioInputs = () => {
             if (scenario) {
                 return (
                     <div>
@@ -29,7 +29,7 @@ class LeftSidebar extends React.Component {
             <div id='left'>
                 <Welcome/>
                 <Library/>
-                {optional()}
+                {scenarioInputs()}
             </div>
         )
     }

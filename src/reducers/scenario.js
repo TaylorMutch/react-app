@@ -30,9 +30,25 @@ export default (state = defaultState, action) => {
         case REQUEST_CONFIGURATION:
             return morph(state, {currentConfiguration: null});
         case RECEIVE_CONFIGURATION:
-            let blah = morph(state, {currentConfiguration: action.configuration});
-            console.log(blah);
-            return blah;
+
+            let config = action.configuration;
+
+            let {initial_conditions_nonspatial_distributions: dist} = config;
+            console.log(dist);
+
+            let {currentDefinitions: defs} = state;
+            console.log(defs);
+
+            // Lookup veg and stateclass from definitions
+            let test = dist[0];
+            let strata = defs.strata.find(x => x.id === test.stratum)
+            let sc = defs.stateclasses.find(x => x.id === test.stateclass)
+
+            console.log(test);
+            console.log(strata);
+            console.log(sc);
+
+            return morph(state, {currentConfiguration: action.configuration});
         default:
             return state;
     }

@@ -23,7 +23,7 @@ const mapDispatchToProps = dispatch => {
             dispatch(setLibrary(name));
         },
 
-        onLoadLibrary: name => {
+        onLoadLibrary: () => {
             dispatch(fetchScenarios());
         }
     }

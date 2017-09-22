@@ -17,6 +17,16 @@ export const receiveAvailableLibraries = libraries => {
     }
 }
 
+export const setLibrary = (name) => {
+
+    // TODO - Do we need to send some map events based on the config?
+
+    return {
+        type: SET_LIBRARY,
+        name
+    }
+}
+
 export const fetchAvailableLibraries = () => {
     return (dispatch, getState) => {
 
@@ -36,15 +46,5 @@ export const fetchAvailableLibraries = () => {
                 dispatch(receiveAvailableLibraries([]))
             })
 
-    }
-}
-
-export const setLibrary = (name) => {
-
-    // Do we need to send some map events?
-
-    return {
-        type: SET_LIBRARY,
-        name
     }
 }
