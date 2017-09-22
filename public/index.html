@@ -22,8 +22,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.4.9/leaflet.draw.js"></script>
 
         <!-- Leaflet.Range -->
-        <link rel="stylesheet" href="%PUBLIC_URL%/css/L.Control.Range.css" />
-        <script src="%PUBLIC_URL%/js/L.Control.Range-min.js"></script>
+        <link rel="stylesheet" href="static/css/L.Control.Range.css" />
+        <script src="static/js/L.Control.Range-min.js"></script>
 
         <!-- Jquery -->
         <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
@@ -38,8 +38,8 @@
         <script src="https://code.highcharts.com/highcharts-more.js"></script>
 
         <!-- Tabs -->
-        <script src="%PUBLIC_URL%/js/vendor/tabcontent.js" type="text/javascript"></script>
-        <link href="%PUBLIC_URL%/css/vendor/tabcontent.css" rel="stylesheet" type="text/css" />
+        <script src="static/js/vendor/tabcontent.js" type="text/javascript"></script>
+        <link href="static/css/vendor/tabcontent.css" rel="stylesheet" type="text/css" />
 
         <!-- Alertify -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/alertify.js/0.3.11/alertify.min.js"></script>
@@ -51,168 +51,24 @@
         <script src="https://unpkg.com/terraformer-wkt-parser@1.1.2"></script>
 
         <!-- Shapefile JS -->
-        <script src="%PUBLIC_URL%/deps/shapefile-js-gh-pages/dist/shp.min.js"> </script>
+        <script src="static/deps/shapefile-js-gh-pages/dist/shp.min.js"> </script>
 
         <!-- My Javascript -->
-        <script src="%PUBLIC_URL%/js/general_js.js" type="text/javascript"></script>
+        <script src="static/js/general_js.js" type="text/javascript"></script>
 
         <!-- My CSS -->
-        <link rel="stylesheet" href="%PUBLIC_URL%/css/base.css" />
-        <link rel="stylesheet" href="%PUBLIC_URL%/css/buttons.css" />
-        <link rel="stylesheet" href="%PUBLIC_URL%/css/toggle.css" />
+        <link rel="stylesheet" href="static/css/base.css" />
+        <link rel="stylesheet" href="static/css/buttons.css" />
+        <link rel="stylesheet" href="static/css/toggle.css" />
     </head>
 
 <body class="claro">
 
     <div id="header">
-      <img id="site_icon" src="%PUBLIC_URL%/img/site_icon.png">Landscape Simulator
+      <img id="site_icon" src="static/img/site_icon.png">Landscape Simulator
     </div>
 
-    <div id="left">
-      <!-- Welcome and Library Widgets -->
-      <div class="widget_div" id="welcome">
-        <div class="header" id="welcome_header">
-          Welcome & Getting Started
-          <img class="collapse_icon" src="%PUBLIC_URL%/img/collapse_down_arrow.png">
-        </div>
-        <div class="collapsible_div" visibility="visible">
-          <div id="intro">
-            The 3D Landscape Simulator is a web-based state-and-transition modelling framework powered by ST-Sim.
-            <p>
-            It is designed to simulate the future vegetation composition of a selected area based on a set of initial conditions, probabilistic transitions, and management actions.
-            <p>
-            To get started, select an ST-Sim library from the table below.<p>
-          </div>
-        </div>
-      </div>
-      <div class="widget_div">
-        <div class="header" id="library_header">ST-Sim Library <img class="collapse_icon" src="%PUBLIC_URL%/img/collapse_down_arrow.png"></div>
-        <div class="collapsible_div" visibility="visible">
-          <div id="library_info">
-            <table id="library_info_table">
-              <tr>
-                <td class="library_info_hidden">Library:</td>
-                <td id=model_selection_td class="initial_td_styling">
-                  <div id="model_selection_container">
-                    <select class="model_selection" name="model_selection" id="model_selection1">
-                      <option disabled selected>Select a Library</option>
-                    </select>
-                  </div>
-                </td>
-              </tr>
-              <tr class="library_info_hidden"><td>Author:</td><td><div id="library_author"></div></td></tr>
-              <tr class="library_info_hidden"><td>Date:</td><td><div id="library_date"></div></td></tr>
-              <tr class="library_info_hidden"><td>Description:</td><td><div id="library_description"></div></td></tr>
-            </table>
-            <input type="button" class="my-button my-button-ok" id="start_button" value="Load Library" />
-          </div>
-            <!--
-            <p>
-            Then, select an area of interest by clicking on a reporting unit (e.g., a watershed or county)...
-            <div id="click_div"><img id="click_icon" src="%PUBLIC_URL%/img/map_click.png' %}"></div>
-            ...or by using the rectangle tool <span style="font-size:20px">&#9632; </span>to define your own area of interest.
-            <p>
-            <div id="click_div"><img id="select_icon" src="%PUBLIC_URL%/img/map_select.png' %}"></div>
-            -->
-        </div>
-      </div>
-
-      <!-- Other input Widgets -->
-      <div id="inputs">
-        <div class="widget_div">
-          <div id="input_initial_veg">
-            <div class="header full_border_radius" id="steps_initial_vegetation_cover">Initial Vegetation Cover
-              <img class="collapse_icon" src="%PUBLIC_URL%/img/collapse_down_arrow.png">
-            </div>
-            <div id="initial_vegetation_container" class="collapsible_div collapsed full_border_radius">
-              <div id="veg_slider_notice">
-                Note: Initial vegetation cover values can only be modified when doing a non-spatial run (under Run Control, set the spatial output switch to "Off").
-              </div>
-              <div id="vegtype_slider_container">
-                <table id="vegTypeSliderTable" class="sliderTable"></table>
-              </div>
-              <div id="total_input_percent_div">
-                Total Percent Cover:
-                <div id="total_input_percent">
-                  100%
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="widget_div">
-          <div id="input_probabilistic_transitions">
-            <div class="header full_border_radius">
-              Probabilistic Transitions
-              <img class="collapse_icon rotate90" src="%PUBLIC_URL%/img/collapse_down_arrow.png">
-            </div>
-            <div class="collapsible_div collapsed">
-              <table id="probabilisticTransitionSliderTable" class="sliderTable"></table>
-            </div>
-          </div>
-        </div>
-        <div class="widget_div">
-          <div id="general_settings">
-            <div class="header full_border_radius">
-              Run Control
-              <img class="collapse_icon rotate90" src="%PUBLIC_URL%/img/collapse_down_arrow.png">
-            </div>
-            <div class="collapsible_div collapsed" >
-              <table id="general_settings_table">
-                <tr>
-                  <td>
-                    <div id="timesteps_div" class="general_settings_div">
-                      Timesteps:
-                    </div>
-                  </td>
-                  <td>
-                    <div class="select_container_2">
-                      <input id="settings_timesteps" type="text">
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div id="iterations_div" class="general_settings_div">
-                      Iterations:
-                    </div>
-                  </td>
-                  <td>
-                    <div class="select_container_2">
-                      <input id="settings_iterations" type="text" value="1">
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div id="run_mode_div" class="general_settings_div">
-                      Spatial Output:
-                    </div>
-                  </td>
-                  <td>
-                    <div id="spatial_control">
-                      <div id="spatial_off">
-                        Off
-                      </div>
-                      <label class="switch">
-                        <input id="spatial_switch" checked type="checkbox">
-                        <div class="slider round"></div>
-                      </label>
-                      <div id="spatial_on">
-                        On
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-              </table>
-            </div>
-          </div>
-        </div>
-        <div id="run_button" class="my-button my-button-ok" type="submit">
-          Run Model
-        </div>
-      </div>
-    </div>
+    <div id="left"></div>
 
     <div id="map"></div>
 
@@ -220,7 +76,7 @@
       <div id="legend_container" class="widget_div">
         <div id="legend_header" class="full_border_radius header right_header">
           Legend
-          <img class="collapse_icon" src="%PUBLIC_URL%/img/collapse_down_arrow.png">
+          <img class="collapse_icon" src="static/img/collapse_down_arrow.png">
         </div>
         <div class="collapsible_div collapsed">
           <div id="scene_legend"></div>
@@ -229,7 +85,7 @@
       <div id="output">
         <div id="model_results_header" class="right_header">
           Model Results
-          <img class="collapse_icon rotate90" src="%PUBLIC_URL%/img/collapse_down_arrow.png">
+          <img class="collapse_icon rotate90" src="static/img/collapse_down_arrow.png">
         </div>
         <div id="tab_container" class="collapsible_div">
           <!--data-persist="true" keeps the current tab active on page refresh-->
@@ -282,7 +138,7 @@
     </div>
 
     <div id="footer">
-      <img id="footerImage" src="%PUBLIC_URL%/img/CBI_logo_sm.png">
+      <img id="footerImage" src="static/img/CBI_logo_sm.png">
       <div id="footerText">
         © 2017
         <a href="https://consbio.org" target="_new">Conservation Biology Institute</a> |
@@ -291,29 +147,29 @@
     </div>
 
     <!-- Leaflet Map -->
-    <script src="%PUBLIC_URL%/leaflet/leaflet_map.js" type="text/javascript"></script>
+    <script src="static/leaflet/leaflet_map.js" type="text/javascript"></script>
 
     <!-- Stacked Area Chart -->
-    <script src="%PUBLIC_URL%/highcharts/stacked_area.js"></script>
+    <script src="static/highcharts/stacked_area.js"></script>
 
     <!-- Column Chart -->
-    <script src="%PUBLIC_URL%/highcharts/column_chart.js"></script>
+    <script src="static/highcharts/column_chart.js"></script>
 
     <!-- Library Configuration -->
-    <script src="%PUBLIC_URL%/config/library_config.js"></script>
+    <script src="static/config/library_config.js"></script>
 
     <!-- Shapefile Uploader -->
-    <script src="%PUBLIC_URL%/deps/L.Control.Shapefile/L.Control.Shapefile.js"></script>
-    <link rel="stylesheet"  href="%PUBLIC_URL%/deps/L.Control.Shapefile/L.Control.Shapefile.css">
+    <script src="static/deps/L.Control.Shapefile/L.Control.Shapefile.js"></script>
+    <link rel="stylesheet"  href="static/deps/L.Control.Shapefile/L.Control.Shapefile.css">
 
     <!-- My leaflet button control -->
-    <script src="%PUBLIC_URL%/deps/L.Control.Button/L.Control.Button.js"></script>
-    <link rel="stylesheet" href="%PUBLIC_URL%/deps/L.Control.Button/L.Control.Button.css"/>
+    <script src="static/deps/L.Control.Button/L.Control.Button.js"></script>
+    <link rel="stylesheet" href="static/deps/L.Control.Button/L.Control.Button.css"/>
 
     <!-- Management Action Scripts -->
-    <script src="%PUBLIC_URL%/js/cost.js"></script>
-    <script src="%PUBLIC_URL%/js/manage.js"></script>
-    <link rel="stylesheet"  href="%PUBLIC_URL%/css/cost.css">
-    <link rel="stylesheet"  href="%PUBLIC_URL%/css/manage.css">
+    <script src="static/js/cost.js"></script>
+    <script src="static/js/manage.js"></script>
+    <link rel="stylesheet"  href="static/css/cost.css">
+    <link rel="stylesheet"  href="static/css/manage.css">
   </body>
 </html>

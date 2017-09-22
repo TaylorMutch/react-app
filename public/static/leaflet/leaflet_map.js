@@ -32,7 +32,7 @@ var layerControl = L.control.groupedLayers("", groupedOverlays, options).addTo(m
 
 var inputStateClassLayer;
 var inputStratumLayer;
-var base_url = 'http://127.0.0.1:8000'; // TODO - remove this
+var base_url = 'http://127.0.0.1:8000';                 // TODO - remove this
 function loadLayers(scenario_input_services){
 
     inputStateClassLayer = L.tileLayer(base_url + scenario_input_services.stateclass);
@@ -81,7 +81,7 @@ function loadOutputLayers(results_scenario_configuration){
         if (typeof results_scenario_configuration.scenario_output_services.stateclass != "undefined") {
 
             // Store the service for the model run
-            outputStateClassServices[run] = results_scenario_configuration.scenario_output_services.stateclass;
+            outputStateClassServices[run] = base_url + results_scenario_configuration.scenario_output_services.stateclass;
 
             // Store the run setting for this run (max timestep needed).
             var runControl = {'t': current_scenario.config.run_control.max_timestep, 'it': 1};

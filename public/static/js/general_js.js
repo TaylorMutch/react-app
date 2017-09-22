@@ -7,8 +7,10 @@ var current_project = {};
 var available_scenarios = [];
 var scenario_url = '';
 var current_scenario = {};
-var run_model_url = '/api/jobs/run-model/';
+var run_model_url = 'http://127.0.0.1:8000/api/jobs/run-model/';
 var result_url = '';
+
+//var LSS = {};
 
 var run;
 var iteration, iterations, timestep, timesteps;
@@ -96,24 +98,26 @@ $(document).ready(function() {
             'config': current_scenario.config
         };
 
-        $.post(run_model_url, {'inputs': JSON.stringify(inputs)})
-            .done(function (res) {
+        //$.post(run_model_url, {'inputs': JSON.stringify(inputs)})
+        //    .done(function (res) {
 
-                var job = res;
+                //var job = res;
+//
+                //(function poll() {
+                //    setTimeout(function() {
+                //        $.getJSON(run_model_url + job.uuid).done(function (update) {
 
-                (function poll() {
-                    setTimeout(function() {
-                        $.getJSON(run_model_url + job.uuid).done(function (update) {
-
-                            if (update.status === 'success' || update.model_status === 'complete') {
+                            //if (update.status === 'success' || update.model_status === 'complete') {
 
                                 $("#output").show();
-                                result_url = update.result_scenario;
+                                //result_url = update.result_scenario;
 
                                 // Determine the reports URL
-                                var results_model_id = String(update.result_scenario);
-                                var reports_url = window.location.href + "api/scenarios/" + results_model_id + "/reports/";
-                                var results_scenario_configuration_url = window.location.href + "api/scenarios/" + results_model_id + "/config/";
+                                //var results_model_id = String(update.result_scenario);
+                                //var reports_url = base_url + "api/scenarios/" + results_model_id + "/reports/";
+                                var reports_url = 'http://127.0.0.1:8000/api/scenarios/33/reports/';
+                               // var results_scenario_configuration_url = base_url + "api/scenarios/" +  + "/config/";
+                               var results_scenario_configuration_url = 'http://127.0.0.1:8000/api/scenarios/33/config/';
 
                                 // Maximum of 4 model runs
                                 if (run == 4) {
@@ -163,22 +167,22 @@ $(document).ready(function() {
                                 $("#legend_container").css("width", "100%")
 
 
-                            } else if (update.status === 'failure') {
-                                alert('An error occurred. Please try again.')
+                            //} else if (update.status === 'failure') {
+                            //    alert('An error occurred. Please try again.')
 
-                                $("#run_button").html('Run Model');
-                                $("#run_button").removeClass('disabled');
-                                $('input:submit').attr("disabled", false);
-                                $('#button_container').attr("disabled", false);
+                            //    $("#run_button").html('Run Model');
+                            //    $("#run_button").removeClass('disabled');
+                            //    $('input:submit').attr("disabled", false);
+                            //    $('#button_container').attr("disabled", false);
 
-                            } else {
-                                poll();
-                            }
-                        })
-                    }, 1500)
-                })();
+                            //} else {
+                            //    poll();
+                            //}
+                //        })
+                //    }, 1500)
+                //})();
 
-            });
+            //});
     });
 
     /***************************************** Change Library *********************************************************/

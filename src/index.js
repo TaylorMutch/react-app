@@ -1,9 +1,20 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import './index.css';
+import { render } from 'react-dom';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
+import thunkMiddleware from 'redux-thunk';
+import App from './components/App';
+import reducers from './reducers';		// Create more reducers!
 
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
+export const store = createStore(reducers, applyMiddleware(thunkMiddleware));
+
+//LSS.store = store
+
+render(
+	<Provider store={store}>
+		<App />
+	</Provider>,
+  document.getElementById('left')
 );
+
+// register async handlers
