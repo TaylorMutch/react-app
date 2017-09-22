@@ -1,7 +1,7 @@
 import React from 'react';
 import InputWidget from '../components/InputWidget'
 
-class VegCoverWidget extends React.Component {
+class VegCover extends React.Component {
 	render() {
 		return (
 			<InputWidget name='Initial Vegetation Cover'>
@@ -24,4 +24,4 @@ class VegCoverWidget extends React.Component {
 	}
 }
 
-export default VegCoverWidget;
+export default VegCover;

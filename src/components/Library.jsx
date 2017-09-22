@@ -1,8 +1,10 @@
 import React from 'react';
-import InputWidget from '../components/InputWidget'
+import PropTypes from 'prop-types';
+import InputWidget from '../components/InputWidget';
+import { libraryConfig } from '../config';
 
-class LibraryWidget extends React.Component {
-	render() {
+const Library = ({name, onSetLibrary, onLoadLibrary}) => {
+	
 		return (
 			<InputWidget name='ST-Sim Library'>
 				<div id="library_info">
@@ -14,7 +16,12 @@ class LibraryWidget extends React.Component {
                 			</td>
                 			<td className="initial_td_styling">
                   				<div id="model_selection_container">
-                    				<select className="model_selection" name="model_selection" id="model_selection1">
+                    				<select className="model_selection"
+											name="model_selection"
+											id="model_selection1"
+											onChange={e => {
+												e.preventDefault();
+												onSetLibrary(libraryConfig[e.target.value].name)}}>
                     	  				<option disabled defaultValue='Select a Library'>Select a Library</option>
                     				</select>
                   				</div>
@@ -25,11 +32,25 @@ class LibraryWidget extends React.Component {
               			<tr className="library_info_hidden"><td>Description:</td><td><div id="library_description"></div></td></tr>
             			</tbody>
             		</table>
-            	<input type="button" className="my-button my-button-ok" id="start_button" value="Load Library" />
+            		<input
+					type="button"
+					className="my-button my-button-ok"
+					id="start_button" 
+					value="Load Library"
+					onClick={e => {
+							e.preventDefault();
+							onLoadLibrary();
+						}}
+					/>
           		</div>
 			</InputWidget>
 		)
-	}
 }
 
-export default LibraryWidget;
+Library.propTypes = {
+	name: PropTypes.string,
+	onSetLibrary: PropTypes.func.isRequired,
+	onLoadLibrary: PropTypes.func.isRequired
+}
+
+export default Library;

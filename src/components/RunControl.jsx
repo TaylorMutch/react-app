@@ -1,7 +1,7 @@
 import React from 'react';
 import InputWidget from '../components/InputWidget'
 
-class RunControlWidget extends React.Component {
+class RunControl extends React.Component {
 	render() {
 		return (
 			<InputWidget name='Run Control'>
@@ -59,4 +59,4 @@ class RunControlWidget extends React.Component {
 	}
 }
 
-export default RunControlWidget;
+export default RunControl;

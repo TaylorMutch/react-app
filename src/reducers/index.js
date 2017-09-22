@@ -9,11 +9,13 @@ import tabs from './tabs'
 //import saves from './saves'
 //import legends from './legends'
 import error from './error'
+import library from './library'
 //import popup from './popup'
 
 export default combineReducers({
     //isLoggedIn: auth,
     activeTab: tabs,
+    library,
     //activeVariable,
     //activeStep,
     //runConfiguration,

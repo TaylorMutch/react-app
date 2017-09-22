@@ -914,7 +914,7 @@ div.callout {
 	left: 1px;
 }
 
-#tab_container {
+.tab_container {
 	display: none;
 	width: 335px;
 	padding: 10px;

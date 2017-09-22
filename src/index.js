@@ -14,7 +14,7 @@ render(
 	<Provider store={store}>
 		<App />
 	</Provider>,
-  document.getElementById('left')
+  document.getElementById('root')
 );
 
 // register async handlers

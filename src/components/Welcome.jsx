@@ -1,7 +1,7 @@
 import React from 'react';
 import InputWidget from '../components/InputWidget'
 
-class WelcomeWidget extends React.Component {
+class Welcome extends React.Component {
 	render() {
 		return (
 			<InputWidget name='Welcome & Getting Started'>
@@ -19,4 +19,4 @@ class WelcomeWidget extends React.Component {
 	}
 }
 
-export default WelcomeWidget;
+export default Welcome;

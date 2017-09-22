@@ -10,8 +10,6 @@ var current_scenario = {};
 var run_model_url = 'http://127.0.0.1:8000/api/jobs/run-model/';
 var result_url = '';
 
-//var LSS = {};
-
 var run;
 var iteration, iterations, timestep, timesteps;
 var settings;

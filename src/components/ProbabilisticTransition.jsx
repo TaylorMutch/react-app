@@ -1,7 +1,7 @@
 import React from 'react';
 import InputWidget from '../components/InputWidget'
 
-class ProbabilisticTransitionWidget extends React.Component {
+class ProbabilisticTransition extends React.Component {
 	render() {
 		return (
 			<InputWidget name='Probabilistic Transitions'>
@@ -11,4 +11,4 @@ class ProbabilisticTransitionWidget extends React.Component {
 	}
 }
 
-export default ProbabilisticTransitionWidget;
+export default ProbabilisticTransition;
