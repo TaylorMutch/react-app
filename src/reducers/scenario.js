@@ -31,6 +31,7 @@ export default (state = defaultState, action) => {
             return morph(state, {currentConfiguration: null});
         case RECEIVE_CONFIGURATION:
 
+            /*
             let config = action.configuration;
 
             let {initial_conditions_nonspatial_distributions: dist} = config;
@@ -47,6 +48,7 @@ export default (state = defaultState, action) => {
             console.log(test);
             console.log(strata);
             console.log(sc);
+            */
 
             return morph(state, {currentConfiguration: action.configuration});
         default:

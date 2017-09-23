@@ -65,16 +65,13 @@ export const receiveConfiguration = configuration => {
 export const fetchScenarios = () => {
     return (dispatch, getState) => {
 
-        // get the current library and the first project
-
+        // Get the current library and the first project's url
         let { library } = getState();
-        let current = library.availableLibraries.find(x => x.name === library.name);
-        let projectUrl = current.projects[0];
+        let projectUrl = library.availableLibraries.find(x => x.name === library.name).projects[0];
 
         // Get Project from API
         dispatch(requestProject());
         get(projectUrl).then(handleJSON).then(project => {
-
             dispatch(receiveProject(project));
 
             // Get project definitions
@@ -85,11 +82,14 @@ export const fetchScenarios = () => {
                 console.log(err);
                 dispatch(receiveDefinitions(null));
             })
-            console.log(project);
+            
+            // Get scenario
+            dispatch(requestScenario())
             let scenarioUrl = project.scenarios[0];
             get(scenarioUrl).then(handleJSON).then(scenario => {
                 dispatch(receiveScenario(scenario));
 
+                // Get configuration
                 let scenarioConfigUrl = scenarioUrl + 'config/';
                 get(scenarioConfigUrl).then(handleJSON)
                 .then(configuration => dispatch(receiveConfiguration(configuration)))

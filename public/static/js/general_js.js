@@ -737,8 +737,8 @@ function setInitialConditionsSidebar(veg_initial_conditions) {
         var state_class_count = Object.keys(state_class_object).length;
 
         //Create a skeleton to house the intital conditions slider bar and  state class input table.
-        var veg_table_id = veg_type.replace(/ /g, "_").replace(/&/g, "__");
-        var management_table_id = veg_table_id + "_management";
+        //var veg_table_id = veg_type.replace(/ /g, "_").replace(/&/g, "__");
+        //var management_table_id = veg_table_id + "_management";
         $("#vegTypeSliderTable").append("<tr><td>" +
             "<table class='initial_veg_cover_input_table'>" +
             "<tr><td colspan='4'>" +
@@ -757,16 +757,6 @@ function setInitialConditionsSidebar(veg_initial_conditions) {
             "<table id='" + veg_id + "' class='sub_slider_table' title='" + veg_type + "'><tr><td colspan='3'><div class='state_class_header'>" + veg_type + "<img class='close_state_class' src='static/img/close.png'></div></td></tr></table>" +
             "</div></div>" +
             "</td>" +
-             /*
-            "<td>" +
-            "<div class='manage_div'><span class='manage_span'>Manage</span></div>" +
-            "<div class='management_action_inputs' style='display:none'>" +
-            "<div class='manage_callout callout right'>" +
-            "<table id='" + management_table_id + "' class='sub_slider_table' title='" + veg_type + "'></table>" +
-            "</div>" +
-            "</div>" +
-            "</td>
-            */
             "</tr></table>" +
             "</td></tr>"
         );
@@ -787,15 +777,6 @@ function setInitialConditionsSidebar(veg_initial_conditions) {
                 "<td>" + state_class + " </td><td><input class='veg_state_class_entry' id='" + "veg_" + veg_id + "_" + state_class_id + "' type='text' size='2' value=" + pct_cover +  ">%</td></tr>")
         });
 
-        /*
-        var management_action_count = 1;
-        // TODO: Currently hard coded. Same for each veg type. List of management actions will eventually be specific to the veg type.
-        management_actions_dict[veg_type] = management_actions_list;
-        $.each(management_actions_dict[veg_type], function (index, management_action) {
-            $("#" + management_table_id).append("<tr><td>" + management_action + " </td><td><input class='veg_state_class_entry' id='" + "management_" + veg_iteration + "_" + state_class_count + "_manage' type='text' size='2' value='0'> Acres</td></tr>")
-            management_action_count++
-        });
-        */
 
         $("#vegTypeSliderTable").append("</td></td>")
 
