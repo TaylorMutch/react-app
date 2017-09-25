@@ -22,3 +22,11 @@ export const handleJSON = response => {
         throw new Error('Bad status: ' + response.status);
     }
 }
+
+export const getRGB = color => {
+    color.split(',')
+    let rgb = color.split(',')
+    rgb.shift()
+    rgb = ['rgb(', rgb.join(), ')'].join('')
+    return rgb
+}

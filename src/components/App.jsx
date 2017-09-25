@@ -16,8 +16,8 @@ class App extends React.Component {
             <LeftSidebar/>
             <RightSidebar/>
             <Footer/>
-            </div>
-        )
+        </div>    
+    )
     }
 }
 

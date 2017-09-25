@@ -3,21 +3,33 @@ import InputWidget from '../containers/InputWidget'
 import VegSlider from '../components/VegSlider'
 
 class VegCoverTable extends React.Component {
+
+    
+
 	render() {
 
-        let { defs, scenario } = this.props
-
-        console.log(defs)
-        console.log(scenario)
-
-        //let 
+        let { defs, scenario, config } = this.props
+        let canRender = defs !== null && scenario !== null && config !== null
 
         let sliders = () => {
+
+            if (!canRender) {
+                return
+            }
+
+            let { strata, stateclasses } = defs;
+            let { run_control, initial_conditions_nonspatial_distributions: dist } = config
+
             return (
                 <table id="vegTypeSliderTable" className="sliderTable">
                     <tbody>
-                        <VegSlider/>
-                        <VegSlider/>
+                        {strata.map(veg => {
+                            return <VegSlider key={veg.id}
+                                              veg={veg}
+                                              distribution={dist.filter(x => x.stratum === veg.id)}
+                                              disabled={run_control.is_spatial}
+                                              />
+                        })}
                     </tbody>
                 </table>
             )   

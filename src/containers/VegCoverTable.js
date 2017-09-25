@@ -3,11 +3,12 @@ import { connect } from 'react-redux';
 
 const mapStateToProps = ({scenario}) => {
 
-    let { currentDefinitions, currentScenario } = scenario;
+    let { currentDefinitions, currentScenario, currentConfiguration } = scenario
 
     return {
         defs: currentDefinitions,
-        scenario: currentScenario
+        scenario: currentScenario,
+        config: currentConfiguration
     }
 }
 
