@@ -611,7 +611,7 @@ div#pop-up {
 }
 
 .slider_bars {
-	width: 163px;
+	width: 163px !important;
 	margin: 4px 3px 2px 8px;
 }
 

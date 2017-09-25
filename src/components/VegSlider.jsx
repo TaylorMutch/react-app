@@ -1,4 +1,6 @@
 import React from 'react'
+import Slider from 'rc-slider'
+import 'rc-slider/assets/index.css'
 import StateClassTable from '../components/StateClassTable'
 
 
@@ -9,6 +11,8 @@ class VegSlider extends React.Component {
     // Consider having the legend as a separate componenent
 
     // ADD  id='veg" + veg_id + "_label' to the slider input
+
+    // <div className='slider_bars veg_slider_bars'></div>
 
     render() {
 
@@ -21,28 +25,36 @@ class VegSlider extends React.Component {
                             <td colSpan='4'>
                                 <div className='scene_legend_color_initial_vegetation_cover' style={{backgroundColor: 'green'}}></div>
                                 <label htmlFor="amount_veg1">
-                                    <div className='imageOverlayLink'></div>
+                                    <div className='imageOverlayLink'>
+                                        Vegetation Type
+                                    </div>
                                 </label>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <div className='slider_bars veg_slider_bars'></div>
+                                <Slider
+                                className='slider_bars veg_slider_bars'
+                                min={0}
+                                max={100}
+                                />
                             </td>
                             <td>
                                 <input type='text'  className='current_slider_setting' readOnly />
                             </td>
-                            <div className='show_state_classes_link state_class_div'>
-                                <span className='state_class_span'>
-                                    State Classes
-                                </span>
-                            </div>
                             <td>
-                            <div className='sub_slider_text_inputs' style={{display: 'none'}}>
-                                <div className='callout right'>
-                                    <StateClassTable/>
+                                <div className='show_state_classes_link state_class_div'>
+                                    <span className='state_class_span'>
+                                        State Classes
+                                    </span>
                                 </div>
-                            </div>
+                            </td>
+                            <td>
+                                <div className='sub_slider_text_inputs' style={{display: 'none'}}>
+                                    <div className='callout right'>
+                                        <StateClassTable/>
+                                    </div>
+                                </div>
                             </td>
                         </tr>
                     </tbody>

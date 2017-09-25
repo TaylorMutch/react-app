@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import InputWidget from '../components/InputWidget';
+import InputWidget from '../containers/InputWidget';
 import ActivateButton from '../components/ActivateButton';
 import { libraryConfig } from '../config';
 

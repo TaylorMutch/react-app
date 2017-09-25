@@ -1,11 +1,12 @@
-import Library from '../components/Library';
-import { connect } from 'react-redux';
-import { setLibrary, fetchAvailableLibraries } from '../actions/library';
-import { fetchScenarios } from '../actions/scenario';
+import Library from '../components/Library'
+import { connect } from 'react-redux'
+import { setLibrary, fetchAvailableLibraries } from '../actions/library'
+import { fetchScenarios } from '../actions/scenario'
+import { expandWidget, initializeInputs } from '../actions/sidebar'
 
 const mapStateToProps = ({library}) => {
 
-    let { name, availableLibraries } = library;
+    let { name, availableLibraries } = library
 
     return {
         name,
@@ -16,15 +17,17 @@ const mapStateToProps = ({library}) => {
 const mapDispatchToProps = dispatch => {
     return {
         onLoad: () => {
-            dispatch(fetchAvailableLibraries());
+            dispatch(fetchAvailableLibraries())
         },
         
         onSetLibrary: name => {
-            dispatch(setLibrary(name));
+            dispatch(setLibrary(name))
         },
 
         onLoadLibrary: () => {
-            dispatch(fetchScenarios());
+            dispatch(initializeInputs())
+            dispatch(expandWidget('Initial Vegetation Cover'))
+            dispatch(fetchScenarios())
         }
     }
 }

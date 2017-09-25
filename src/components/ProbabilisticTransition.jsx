@@ -1,5 +1,5 @@
 import React from 'react';
-import InputWidget from '../components/InputWidget'
+import InputWidget from '../containers/InputWidget'
 
 class ProbabilisticTransition extends React.Component {
 	render() {

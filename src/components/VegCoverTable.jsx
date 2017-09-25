@@ -1,21 +1,25 @@
 import React from 'react'
-import InputWidget from '../components/InputWidget'
+import InputWidget from '../containers/InputWidget'
 import VegSlider from '../components/VegSlider'
 
 class VegCoverTable extends React.Component {
 	render() {
 
-        let { defs, scenario } = this.props;
+        let { defs, scenario } = this.props
 
         console.log(defs)
-        console.log(scenario);
+        console.log(scenario)
+
+        //let 
 
         let sliders = () => {
             return (
-                <div>
-                    <VegSlider/>
-                    <VegSlider/>
-                </div>
+                <table id="vegTypeSliderTable" className="sliderTable">
+                    <tbody>
+                        <VegSlider/>
+                        <VegSlider/>
+                    </tbody>
+                </table>
             )   
         }
 
@@ -25,11 +29,7 @@ class VegCoverTable extends React.Component {
                     Note: Initial vegetation cover values can only be modified when doing a non-spatial run (under Run Control, set the spatial output switch to "Off").
                 </div>
                 <div id="vegtype_slider_container">
-                    <table id="vegTypeSliderTable" className="sliderTable">
-                        <tbody>
-                            {sliders()}
-                        </tbody>
-                    </table>
+                    {sliders()}
                 </div>
                 <div id="total_input_percent_div">
                     Total Percent Cover:
