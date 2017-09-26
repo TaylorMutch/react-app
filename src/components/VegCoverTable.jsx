@@ -1,34 +1,34 @@
 import React from 'react'
 import InputWidget from '../containers/InputWidget'
-import VegSlider from '../components/VegSlider'
+import VegSlider from '../containers/VegSlider'
 
 class VegCoverTable extends React.Component {
-
-    
 
 	render() {
 
         let { defs, scenario, config } = this.props
-        let canRender = defs !== null && scenario !== null && config !== null
+        
+        if (!(defs !== null && scenario !== null && config !== null)) return null
 
+        let { run_control, initial_conditions_nonspatial_distributions: dist } = config
+        let total = parseInt(dist.map(x => x.relative_amount).reduce((a, b) => a + b))
         let sliders = () => {
 
-            if (!canRender) {
-                return
-            }
-
-            let { strata, stateclasses } = defs;
-            let { run_control, initial_conditions_nonspatial_distributions: dist } = config
-
+            let { strata } = defs;
+            
             return (
                 <table id="vegTypeSliderTable" className="sliderTable">
                     <tbody>
                         {strata.map(veg => {
-                            return <VegSlider key={veg.id}
-                                              veg={veg}
-                                              distribution={dist.filter(x => x.stratum === veg.id)}
-                                              disabled={run_control.is_spatial}
-                                              />
+                            return (
+                                <tr>
+                                    <td>
+                                        <VegSlider key={veg.id} veg={veg}
+                                        distribution={dist.filter(x => x.stratum === veg.id)}
+                                        disabled={run_control.is_spatial}/>
+                                    </td>
+                                </tr>
+                            )
                         })}
                     </tbody>
                 </table>
@@ -46,7 +46,7 @@ class VegCoverTable extends React.Component {
                 <div id="total_input_percent_div">
                     Total Percent Cover:
                     <div id="total_input_percent">
-                        100%
+                        {total}%
                     </div>
                 </div>
 			</InputWidget>

@@ -388,10 +388,10 @@ $(document).ready(function() {
     }
 
 
-    $(document).on("click", ".close_state_class", function(){
-        map.removeLayer(inputStateClassLayer);
-        $(this).parents(".sub_slider_text_inputs").hide()
-    });
+    //$(document).on("click", ".close_state_class", function(){
+    //    map.removeLayer(inputStateClassLayer);
+    //    $(this).parents(".sub_slider_text_inputs").hide()
+    //});
 
 
     // Tooltip popup on management scenarios
@@ -428,7 +428,7 @@ $(document).ready(function() {
         });
     }
 
-    delegatedPopupContext('.show_state_classes_link', '.sub_slider_text_inputs');
+    //delegatedPopupContext('.show_state_classes_link', '.sub_slider_text_inputs');
     //delegatedPopupContext('.manage_div', '.management_action_inputs');
 
     $(".tab_container").on("click", function(){
