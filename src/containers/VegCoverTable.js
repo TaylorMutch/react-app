@@ -12,23 +12,4 @@ const mapStateToProps = ({scenario}) => {
     }
 }
 
-/*
-const mapDispatchToProps = dispatch => {
-    return {
-        onLoad: () => {
-            dispatch(fetchAvailableLibraries());
-        },
-        
-        onSetLibrary: name => {
-            dispatch(setLibrary(name));
-        },
-
-        onLoadLibrary: () => {
-            dispatch(fetchScenarios());
-        }
-    }
-}
-*/
-
-//export default connect(mapStateToProps, mapDispatchToProps)(VegCoverTable)
 export default connect(mapStateToProps)(VegCoverTable)

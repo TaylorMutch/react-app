@@ -21,9 +21,9 @@ class VegCoverTable extends React.Component {
                     <tbody>
                         {strata.map(veg => {
                             return (
-                                <tr>
+                                <tr key={veg.id}>
                                     <td>
-                                        <VegSlider key={veg.id} veg={veg}
+                                        <VegSlider veg={veg}
                                         distribution={dist.filter(x => x.stratum === veg.id)}
                                         disabled={run_control.is_spatial}/>
                                     </td>

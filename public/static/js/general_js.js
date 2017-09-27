@@ -366,33 +366,27 @@ $(document).ready(function() {
         }
     }
 
-    function collapseOtherDivs(this_header) {
-        // For left hand header clicks, collapse the other divs
-        var this_collapsible_div = $(this_header).siblings(".collapsible_div");
-
-        if (!$(this_header).hasClass("right_header")) {
-
-            var other_collapsible_divs = $("#left .header").siblings(".collapsible_div").not(this_collapsible_div);
-            $.each(other_collapsible_divs, function () {
-                $(this).slideUp();
-                $(this).toggleClass("full_border_radius");
-            });
-
-            var other_headers = $("#left .header").not(this_header);
-            $.each(other_headers, function () {
-                $(this).addClass("full_border_radius");
-                $(this).children(".collapse_icon").addClass("rotate90");
-            });
-
-        }
-    }
-
+    //function collapseOtherDivs(this_header) {
+    //    // For left hand header clicks, collapse the other divs
+    //    var this_collapsible_div = $(this_header).siblings(".collapsible_div");
+    //    if (!$(this_header).hasClass("right_header")) {
+    //        var other_collapsible_divs = $("#left .header").siblings(".collapsible_div").not(this_collapsible_div);
+    //        $.each(other_collapsible_divs, function () {
+    //            $(this).slideUp();
+    //            $(this).toggleClass("full_border_radius");
+    //        });
+    //        var other_headers = $("#left .header").not(this_header);
+    //        $.each(other_headers, function () {
+    //            $(this).addClass("full_border_radius");
+    //            $(this).children(".collapse_icon").addClass("rotate90");
+    //        });
+    //    }
+    //}
 
     //$(document).on("click", ".close_state_class", function(){
     //    map.removeLayer(inputStateClassLayer);
     //    $(this).parents(".sub_slider_text_inputs").hide()
     //});
-
 
     // Tooltip popup on management scenarios
     $(".scenario_radio_label").hover(function(e) {

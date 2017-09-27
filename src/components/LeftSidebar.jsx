@@ -2,7 +2,7 @@ import React from 'react';
 import Welcome from '../components/Welcome';
 import Library from '../containers/Library';
 import VegCoverTable from '../containers/VegCoverTable';
-import ProbabilisticTransition from '../components/ProbabilisticTransition';
+import ProbabilisticTransitionTable from '../containers/ProbabilisticTransitionTable';
 import RunControl from '../components/RunControl';
 import RunButton from '../components/RunButton';
 
@@ -17,7 +17,7 @@ class LeftSidebar extends React.Component {
                 return (
                     <div>
                         <VegCoverTable/>
-                        <ProbabilisticTransition/>
+                        <ProbabilisticTransitionTable/>
                         <RunControl/>
                         <RunButton/>
                     </div>
