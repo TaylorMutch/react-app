@@ -1,6 +1,5 @@
 import React from 'react';
 import 'rc-slider/assets/index.css'
-import 'rc-tooltip/assets/bootstrap.css'
 import Slider from 'rc-slider'
 import InputWidget from '../containers/InputWidget'
 import { libraryConfig } from '../config'

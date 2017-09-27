@@ -437,24 +437,24 @@ $(document).ready(function() {
 
     /*********************************************** Spatial Setting **************************************************/
 
-    $(document).on("change", "#spatial_switch", function(){
-        setSpatialOutputOptions($(this)[0].checked)
-        if ($(this)[0].checked){
-
-            $(".veg_slider_bars").slider("disable");
-            $(".veg_slider_bars").addClass("disabled");
-            $(".veg_state_class_entry").addClass("disabled");
-            $(".veg_state_class_entry").prop("disabled", true);
-        }
-        else{
-
-            $(".veg_slider_bars").slider("enable");
-            $(".veg_slider_bars").removeClass("disabled");
-            $(".veg_state_class_entry").removeClass("disabled");
-            $(".veg_state_class_entry").prop("disabled", false);
-        }
-
-    });
+    //$(document).on("change", "#spatial_switch", function(){
+    //    setSpatialOutputOptions($(this)[0].checked)
+    //    if ($(this)[0].checked){
+//
+    //        $(".veg_slider_bars").slider("disable");
+    //        $(".veg_slider_bars").addClass("disabled");
+    //        $(".veg_state_class_entry").addClass("disabled");
+    //        $(".veg_state_class_entry").prop("disabled", true);
+    //    }
+    //    else{
+//
+    //        $(".veg_slider_bars").slider("enable");
+    //        $(".veg_slider_bars").removeClass("disabled");
+    //        $(".veg_state_class_entry").removeClass("disabled");
+    //        $(".veg_state_class_entry").prop("disabled", false);
+    //    }
+//
+    //});
 
     function setSpatialOutputOptions(setting) {
 
@@ -1180,33 +1180,33 @@ function update_results_table(run) {
     });
 }
 
-var colorMap;
-var state_class_color_map;
-var veg_type_color_map;
-function createColorMap(project_definitions){
-
-    colorMap={};
-    colorMap["State Classes"]={};
-    colorMap["Vegetation Types"]={};
-    state_class_color_map={};
-    veg_type_color_map={};
-
-    $.each(project_definitions.stateclasses, function(index,object){
-        var rgb = (object.color).split(",");
-        rgb.shift();
-        var rgb_string = rgb.join();
-        colorMap["State Classes"][object.name] = "rgb(" + rgb_string + ")";
-
-    });
-
-    $.each(project_definitions.strata, function(index,object){
-        var rgb = (object.color).split(",");
-        rgb.shift();
-        var rgb_string = rgb.join();
-        colorMap["Vegetation Types"][object.name] = "rgb(" + rgb_string + ")";
-
-    });
-
-}
+//var colorMap;
+//var state_class_color_map;
+//var veg_type_color_map;
+//function createColorMap(project_definitions){
+//
+//    colorMap={};
+//    colorMap["State Classes"]={};
+//    colorMap["Vegetation Types"]={};
+//    state_class_color_map={};
+//    veg_type_color_map={};
+//
+//    $.each(project_definitions.stateclasses, function(index,object){
+//        var rgb = (object.color).split(",");
+//        rgb.shift();
+//        var rgb_string = rgb.join();
+//        colorMap["State Classes"][object.name] = "rgb(" + rgb_string + ")";
+//
+//    });
+//
+//    $.each(project_definitions.strata, function(index,object){
+//        var rgb = (object.color).split(",");
+//        rgb.shift();
+//        var rgb_string = rgb.join();
+//        colorMap["Vegetation Types"][object.name] = "rgb(" + rgb_string + ")";
+//
+//    });
+//
+//}
 
 

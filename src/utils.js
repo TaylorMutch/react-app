@@ -30,3 +30,11 @@ export const getRGB = color => {
     rgb = ['rgb(', rgb.join(), ')'].join('')
     return rgb
 }
+
+export const getInteger = value => {
+    let val = parseInt(value, 10)
+    if (window.isNaN(val)) {
+        val = 0
+    }
+    return val
+}

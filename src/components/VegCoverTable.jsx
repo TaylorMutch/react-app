@@ -11,7 +11,7 @@ class VegCoverTable extends React.Component {
         if (!(defs !== null && scenario !== null && config !== null)) return null
 
         let { run_control, initial_conditions_nonspatial_distributions: dist } = config
-        let total = parseInt(dist.map(x => x.relative_amount).reduce((a, b) => a + b))
+        let total = parseInt(dist.map(x => x.relative_amount).reduce((a, b) => a + b), 10)
         let sliders = () => {
 
             let { strata } = defs;

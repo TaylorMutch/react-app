@@ -11,7 +11,7 @@ class VegSlider extends React.Component {
         let { veg, distribution, disabled, callout, onOpenCallout, onCloseCallout } = this.props
         let isActive = veg.id === callout
         let { name, color } = veg
-        let total = parseInt(distribution.map(x => x.relative_amount).reduce((a, b) => a + b))
+        let total = parseInt(distribution.map(x => x.relative_amount).reduce((a, b) => a + b), 10)
         let rgb = getRGB(color)
 
         return (

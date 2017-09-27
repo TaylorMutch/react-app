@@ -109,7 +109,7 @@ canvas {
 	/* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.65); */
 	overflow-y: auto;
 	overflow-x: hidden;
-	max-height: calc(100vh - 400px);
+	max-height: calc(100vh - 500px);
 }
 
 .collapsed {
@@ -1039,18 +1039,6 @@ ul.buttons2 li.selected a, ul.buttons2 li.selected a:hover {
 	cursor:pointer;
 }
 
-#run_mode_div {
-}
-
-#library_div {
-}
-
-#timesteps_div {
-}
-
-#iterations_div{
-}
-
 .selectboxit-container .selectboxit-options {
 	width: 150px;
 }
@@ -1181,14 +1169,6 @@ ul.buttons2 li.selected a, ul.buttons2 li.selected a:hover {
 
 .veg_state_class_entry{
 	width: 50px
-}
-
-#settings_timesteps{
-	width:140px;
-}
-
-#settings_iterations{
-	width:140px;
 }
 
 .column_charts_button{

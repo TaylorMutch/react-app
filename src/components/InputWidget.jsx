@@ -12,12 +12,13 @@ class InputWidget extends React.Component {
 		if (!isActive) {
 			style.display = 'none'
 		}
+		let collapseClassName = 'collapse_icon' + ((isActive) ? ' rotate90' : '')
 
 		return (
 			<div className='widget_div'>
 				<div className='header full_border_radius' onClick={e => onExpand(name)}>
 					{name}
-					<img className='collapse_icon' src='static/img/collapse_down_arrow.png' alt=''/>
+					<img className={collapseClassName} src='static/img/collapse_down_arrow.png' alt=''/>
 				</div>
 				<div className='collapsible_div' visibility='visible' style={style}>
 				{children}
@@ -32,4 +33,4 @@ InputWidget.propTypes = {
 	children: PropTypes.node.isRequired
 }
 
-export default InputWidget;
+export default InputWidget

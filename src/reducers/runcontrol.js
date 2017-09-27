@@ -1,1 +1,0 @@
-// Reducer for run control widget
